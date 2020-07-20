@@ -21,11 +21,11 @@ public class InfoController {
 
     @GetMapping
     public ResponseEntity<BundleModel> getController() {
-        return new ResponseEntity<BundleModel>(errorHandler.getListError(), HttpStatus.OK);
+        return new ResponseEntity<>(errorHandler.getListError(), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<String> postController() {
-        return new ResponseEntity<String>("OK", HttpStatus.OK);
+        return new ResponseEntity<>("OK", HttpStatus.OK);
     }
 }

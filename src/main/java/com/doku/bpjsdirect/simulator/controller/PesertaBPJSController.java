@@ -22,11 +22,11 @@ public class PesertaBPJSController {
 
     @GetMapping
     public ResponseEntity<BundleModel> getController(@PathVariable("noka") String noka) {
-        return new ResponseEntity<BundleModel>(pesertaService.getInfoByNoka(noka), HttpStatus.OK);
+        return new ResponseEntity<>(pesertaService.getInfoByNoka(noka), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<String> postController() {
-        return new ResponseEntity<String>("OK", HttpStatus.OK);
+        return new ResponseEntity<>("OK", HttpStatus.OK);
     }
 }

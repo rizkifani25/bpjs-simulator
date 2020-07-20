@@ -24,22 +24,22 @@ public class AutoDebetController {
 
     @PostMapping(value="/TambahDataAutoDebet")
     public ResponseEntity<BundleModel> tambahDataAutoDebet(@RequestBody DataAutoDebetModel dataPeserta) {
-        return new ResponseEntity<BundleModel>(autoDebetService.insertNewDataAutoDebet(dataPeserta.getNoka(), dataPeserta.getHaridebet(), dataPeserta.getNorekening(), dataPeserta.getNamaonrekening(), dataPeserta.getNohp(), dataPeserta.getAlamatemail(), dataPeserta.getStatus_()), HttpStatus.OK);
+        return new ResponseEntity<>(autoDebetService.insertNewDataAutoDebet(dataPeserta.getNoka(), dataPeserta.getHaridebet(), dataPeserta.getNorekening(), dataPeserta.getNamaonrekening(), dataPeserta.getNohp(), dataPeserta.getAlamatemail(), dataPeserta.getStatus_()), HttpStatus.OK);
     }
 
     @PostMapping(value="/UbahDataAutoDebet")
     public ResponseEntity<BundleModel> ubahDataAutoDebet(@RequestBody DataAutoDebetModel dataPeserta) {
-        return new ResponseEntity<BundleModel>(autoDebetService.editDataAutoDebet(dataPeserta.getNoka(), dataPeserta.getHaridebet(), dataPeserta.getNorekening(), dataPeserta.getNamaonrekening(), dataPeserta.getNohp(), dataPeserta.getAlamatemail(), dataPeserta.getStatus_()), HttpStatus.OK);
+        return new ResponseEntity<>(autoDebetService.editDataAutoDebet(dataPeserta.getNoka(), dataPeserta.getHaridebet(), dataPeserta.getNorekening(), dataPeserta.getNamaonrekening(), dataPeserta.getNohp(), dataPeserta.getAlamatemail(), dataPeserta.getStatus_()), HttpStatus.OK);
     }
 
     @PostMapping(value="/InfoPesertaAutoDebet/{noka}")
     public ResponseEntity<BundleModel> postMethodName(@PathVariable("noka") String noka) {
-        return new ResponseEntity<BundleModel>(autoDebetService.getInfoAutoDebetByNoka(noka), HttpStatus.OK);
+        return new ResponseEntity<>(autoDebetService.getInfoAutoDebetByNoka(noka), HttpStatus.OK);
     }
     
     @GetMapping(value = "/DataAutoDebet")
     public ResponseEntity<BundleModel> listDataAutoDebet() {
-        return new ResponseEntity<BundleModel>(autoDebetService.listDataAutoDebet(), HttpStatus.OK);
+        return new ResponseEntity<>(autoDebetService.listDataAutoDebet(), HttpStatus.OK);
     }
     
 }

@@ -1,5 +1,8 @@
 package com.doku.bpjsdirect.simulator.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -32,11 +35,11 @@ public class InfoAutoDebetModel {
 
     @Column(name = "nmcabang")
     private String nmcabang;
-    
+
     @Id
     @Column(name = "noka")
     private String noka;
-    
+
     @Column(name = "nokapic")
     private String nokapic;
 
@@ -58,23 +61,11 @@ public class InfoAutoDebetModel {
     @Column(name = "tgl_input")
     private String tglInput;
 
-    public void setData(
-        Integer idhead, 
-        Integer jmlkeluarga, 
-        Integer kdasalpremi, 
-        String kdbank, 
-        String nama, 
-        String namapic, 
-        String nmbank, 
-        String nmcabang, 
-        String noka, 
-        String nokapic, 
-        String nokk, 
-        String norekening, 
-        String nova, 
-        Integer premi, 
-        Integer status_, 
-        String tglInput){
+    public void setData(Integer idhead, Integer jmlkeluarga, Integer kdasalpremi, String kdbank, String nama,
+            String namapic, String nmbank, String nmcabang, String noka, String nokapic, String nokk, String norekening,
+            String nova, Integer premi, Integer status_, String tglInput) {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy");
 
         this.idhead = idhead;
         this.jmlkeluarga = jmlkeluarga;
@@ -91,6 +82,6 @@ public class InfoAutoDebetModel {
         this.nova = nova;
         this.premi = premi;
         this.status_ = status_;
-        this.tglInput = tglInput;
+        this.tglInput = formatter.format(tglInput);
     }
 }

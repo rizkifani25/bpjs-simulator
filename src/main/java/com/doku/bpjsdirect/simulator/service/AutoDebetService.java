@@ -29,7 +29,7 @@ public class AutoDebetService {
         
         autoDebetRepository.insertNewDataAutoDebet(noka, haridebet, norekening, namaonrekening, nohp, alamatemail, status_);
 
-        bundleResponse.setData(errorHandler.getError("1"), "[]");
+        bundleResponse.setData(errorHandler.getError("1"), "");
 
         return bundleResponse;
     }
@@ -39,7 +39,7 @@ public class AutoDebetService {
       
         autoDebetRepository.editDataAutoDebet(noka, haridebet, norekening, namaonrekening, nohp, alamatemail, status_);
         
-        bundleResponse.setData(errorHandler.getError("1"), "[]");
+        bundleResponse.setData(errorHandler.getError("1"), "");
 
         return bundleResponse;
     }
@@ -59,7 +59,7 @@ public class AutoDebetService {
         InfoAutoDebetModel listInfoAutoDebet = infoAutoDebetRepository.getInfoAutoDebetByNoka(noka);
 
         if (listInfoAutoDebet == null) {
-            bundleResponse.setData(errorHandler.getError("204"), "[]");
+            bundleResponse.setData(errorHandler.getError("204"), "");
             return bundleResponse;
         }
 

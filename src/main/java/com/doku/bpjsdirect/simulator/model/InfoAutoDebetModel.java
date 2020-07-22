@@ -1,7 +1,6 @@
 package com.doku.bpjsdirect.simulator.model;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
